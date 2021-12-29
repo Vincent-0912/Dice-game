@@ -1,0 +1,121 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background:  #70c1b3;
+}
+
+h1{
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+h2{
+    margin: 0;
+}
+
+
+button{
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    margin: 20px 0;
+}
+
+button:hover{
+    background-color: black;
+}
+
+
+/** board and card **/
+.board{
+    position: relative;
+    top: 100px;
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.card{
+    background-color: white;
+    padding: 30px;
+    border: 2px solid red; 
+    border-radius: 10px; 
+}
+
+/** Dice **/
+.dice{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    width: 100px;
+    margin: 40px auto 0px auto;
+}
+
+.side {
+    position: absolute;
+    background-color: #ffF;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e5e5e5;
+}
+
+.dot{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: inset 3px 3px black;
+    margin: -10px;
+}
+
+.one-1, .three-2, .five-3{
+    top: 50%;
+    left: 50%;
+}
+
+.two-1, .three-1, .four-1, .five-1, .six-1 {
+    top: 20%;
+    left: 20%;
+}
+
+.four-2,.five-2, .six-2{
+    top: 20%;
+    left: 80%;
+}
+
+.four-3, .five-4, .six-5{
+    top: 80%;
+    left: 20%;
+}
+
+.two-2,.three-3,.four-4, .five-5, .six-6{
+    top: 80%;
+    left: 80%;
+}
+
+.six-3{
+    top: 50%;
+    left: 20%;
+}
+
+.six-4{
+    top: 50%;
+    left: 80%;
+}
+
+
+  
