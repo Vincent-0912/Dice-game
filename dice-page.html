@@ -3,21 +3,29 @@
 
     <!-- HEAD -->
     <head>
-        
+        <title>Dice Game</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,900;1,700&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
     </head>
 
     <!-- BODY -->
     <body>
+
+        <!-- header -->
+        <header>
+            <h1>🎲 Roll the dice 🎲</h1>
+        </header>
         
+        <!-- section : board -->
         <section class="board">
 
-            <h1> Roll the dice 🎲</h1>
+            <span id="result"></span>
             
             <div class="container">
-                <div class="card">
+                <div id="cardPlayer1" class="card">
                     <h2 id="player1">Player 1</h2>
-                    <h3>Score : <span id="scorePlayer1">-</span></h3>
+                    <h3><span id="scorePlayer1">-</span></h3>
                     
                     <div id="dice1" class="dice">
                         <div class="side one">
@@ -56,9 +64,9 @@
                     </div>
                 </div>
     
-                <div class="card">
+                <div id="cardPlayer2" class="card">
                     <h2 id="player2">Player 2</h2>
-                    <h3>Score : <span id="scorePlayer2">-</span></h3>
+                    <h3><span id="scorePlayer2">-</span></h3>
 
                     <div id="dice2" class="dice">
                         <div class="side one">

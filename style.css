@@ -2,36 +2,58 @@ html, body{
     margin: 0;
     padding: 0;
     background:  #70c1b3;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 h1{
     margin: 0;
-    margin-bottom: 15px;
+    font-size: 50px;
+    font-weight: 900;
 }
+
 
 h2{
     margin: 0;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+h3{
+    font-weight: 300;
+    font-size: 30px;
 }
 
 
 button{
-    background-color: red;
+    background-color: #ef233c;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
     color: white;
+    font-size: 16px;
+    font-weight: 700;
     margin: 20px 0;
+
 }
 
 button:hover{
-    background-color: black;
+    box-shadow: 1px 3px #50514F;
+    transition: transform .4s;
+    transform: scale(1.1);
+}
+
+
+header{
+    color: #ef233c;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
 }
 
 
 /** board and card **/
 .board{
     position: relative;
-    top: 100px;
     background: white;
     max-width: 600px;
     margin: 0 auto;
@@ -49,8 +71,40 @@ button:hover{
 .card{
     background-color: white;
     padding: 30px;
-    border: 2px solid red; 
+    border: 2px solid; 
     border-radius: 10px; 
+    margin-bottom: 40px;
+}
+
+.turn{
+    border: 2px solid #ef233c;
+    box-shadow: 1px 3px #ef233c;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: scale(1.1);
+}
+
+
+/** Winner & loser **/
+.winner{
+    background-color: #f4d35e;
+    box-shadow: 1px 3px #50514F;
+    transition: transform 1s;
+    transform: scale(1.1);
+}
+
+.loser{
+    background-color: #50514F;
+    box-shadow: 1px 3px #50514F;
+    transition: transform 1s;
+    transform: scale(0.9);
+    opacity: 0.5;
+}
+
+#result{
+    font-size: 30px;
+    font-weight: 700;
+    color: #f4d35e;
 }
 
 /** Dice **/
@@ -61,15 +115,24 @@ button:hover{
     height: 100px;
     width: 100px;
     margin: 40px auto 0px auto;
+    
+    transform-style: preserve-3d;
+} 
+
+.dice:hover{
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .side {
     position: absolute;
-    background-color: #ffF;
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    border: 2px solid #e5e5e5;
+    border: 1px solid #e5e5e5;
+    background: white;
 }
 
 .dot{
@@ -82,40 +145,111 @@ button:hover{
     margin: -10px;
 }
 
-.one-1, .three-2, .five-3{
-    top: 50%;
-    left: 50%;
+
+
+/*Side position*/
+.one{
+    transform: translateZ(50px);
 }
 
+.two{
+    transform: translateX(-50px) rotateY(90deg);
+}
+
+.three{
+    transform: translateY(-50px) rotateX(90deg);
+}
+
+.four{
+    transform: translateY(50px) rotateX(90deg);
+}
+
+.five{
+    transform: translateX(50px) rotateY(90deg);
+}
+
+.six{
+    transform: translateZ(-50px);
+}
+
+
+/*Dot position*/
 .two-1, .three-1, .four-1, .five-1, .six-1 {
     top: 20%;
-    left: 20%;
+    left: 20%; 
 }
 
-.four-2,.five-2, .six-2{
+.four-3, .five-3, .six-4 {
     top: 20%;
-    left: 80%;
+    left: 80%; 
 }
 
-.four-3, .five-4, .six-5{
-    top: 80%;
-    left: 20%;
-}
-
-.two-2,.three-3,.four-4, .five-5, .six-6{
-    top: 80%;
-    left: 80%;
-}
-
-.six-3{
+.one-1, .three-2, .five-5 {
     top: 50%;
-    left: 20%;
+    left: 50%; 
 }
 
-.six-4{
+.four-2, .five-2, .six-3 {
+    top: 80%;
+    left: 20%; 
+}
+
+.two-2, .three-3, .four-4, .five-4, .six-6 {
+    top: 80%;
+    left: 80%; 
+}
+
+.six-2 {
     top: 50%;
-    left: 80%;
+    left: 20%; 
+}
+
+.six-5 {
+    top: 50%;
+    left: 80%; 
+} 
+
+
+/*keyframes */
+
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateX(90deg) rotateY(180deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(180deg) rotateY(360deg) rotateZ(0deg);
+    }
 }
 
 
-  
+@keyframes roll {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    25% {
+        transform:  rotateX(145deg) rotateY(165deg) rotateZ(135deg);
+        
+    }
+
+    50% {
+        transform:  rotateX(300deg) rotateY(250deg) rotateZ(200deg);
+        
+    }
+
+    75% {
+        transform:  rotateX(400deg) rotateY(356deg) rotateZ(378deg);
+        
+    }
+
+    100% {
+        transform:  rotateX(600deg) rotateY(550deg) rotateZ(620deg);
+        
+    }
+}
