@@ -21,8 +21,18 @@
         <section class="board">
 
             <span id="result"></span>
-            
-            <div class="container">
+
+            <!-- Coin modal -->
+            <div id="coin-container" class="modal">
+                <span id="coin-message">flip the coin ➡️ the winner starts</span>
+                <div id = "coin" class="coin">
+                    <div class="face1">1</div>
+                    <div class="face2">2</div>
+                </div>
+            </div>
+
+            <!-- Dice container -->
+            <div id = "dice-container" class="container">
                 <div id="cardPlayer1" class="card">
                     <h2 id="player1">Player 1</h2>
                     <h3><span id="scorePlayer1">-</span></h3>
@@ -106,6 +116,10 @@
                 </div>
             </div>
 
+
+            <button id="newgameBtn">New Game</button>
+            <button id="startgameBtn">Start</button>
+            <button id="flipBtn">Flip coin</button>
             <button id="rollBtn">Roll Dice</button>
             
         </section>
